@@ -1,3 +1,5 @@
+import math
+import copy
 
 class Fib:
     #https://www.codewars.com/kata/52549d3e19453df56f0000fe
@@ -38,7 +40,6 @@ class SquareSumSimple:
     #    return False
 
 
-    import math
 
     def FindNextPower(number, pow = 2):
         root = math.pow(number + 1, 1./pow)
@@ -75,5 +76,28 @@ class SquareSumSimple:
             if resultArr != False: return resultArr
         return False
 
-    print(square_sums_row(15))
 
+class RemoveEveryOther:
+    #def remove_every_other(my_list):
+    #return my_list[::2]
+    def remove_every_other(my_list):
+        tmp_list = []
+        for i in range(0, len(my_list), 2):
+            tmp_list.append(my_list[i])
+        my_list[:] = tmp_list
+        return my_list
+
+class StringyString:
+    #https://www.codewars.com/kata/563b74ddd19a3ad462000054/train/python
+    #def stringy(size):
+    #    return ('10' * size)[:size]
+    def stringy(size):
+        list = []
+        for i in range(1, size + 1, 2):
+            list.append('10')
+        if size % 2 != 0:
+            list[len(list) - 1] = '1'
+        return ''.join(list)
+
+
+            
